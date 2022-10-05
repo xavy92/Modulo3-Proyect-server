@@ -19,6 +19,14 @@ require("./config")(app);
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
+//Registro de rutas de pedido
+const pedidosRoutes = require("./routes/pedidos.routes")
+app.use("/api", pedidosRoutes)
+
+// const tareaRoutes = require("./routes/tarea.routes")
+// app.use("/api", tareaRoutes)
+
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
