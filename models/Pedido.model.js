@@ -4,8 +4,8 @@ const { Schema, model } = mongoose
 const pedidoSchema = new Schema({
     title: String,
     description: String,
-    tarea: [{ type: Schema.Types.ObjectId, ref: "Tarea" }],
+    productos: [{ type: Schema.Types.ObjectId, ref: "Producto" }],
 
-})
+},{timestamps: true})
 
 module.exports = model("Pedido", pedidoSchema)

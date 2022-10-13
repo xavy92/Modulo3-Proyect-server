@@ -38,6 +38,7 @@ router.get("/session", (req, res) => {
 //http://localhost:5005/api/auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password, email} = req.body;
+  console.log(req.body)
 
   if (!username) {
     return res

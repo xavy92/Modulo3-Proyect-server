@@ -4,14 +4,14 @@ const router = require("express").Router()
 const mongoose = require ("mongoose")
 
 const Pedido = require("../models/Pedido.model")
-const Tarea = require("../models/Tarea.model")
+const Libro = require("../models/Libro.model")
 
 //Create a new pedido
 router.post("/pedido", (req, res, next) => {
-    const { title, description } = req.body
+    const { title, description, libros } = req.body
     
     //crear un nuevo proyecto con la info de req.body
-    Pedido.create({ title, description, tastk: []})
+    Pedido.create({ title, description, libros})
       .then((response) => res.json(response))
       .catch((err) => res.json(err))
 })
